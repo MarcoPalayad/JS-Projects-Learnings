@@ -6,7 +6,16 @@
   </head>
   <body>
 
-    <button onclick=" console.log(`Cart Quantity: ${cartQty}`);
+    <button onclick="  
+      
+    if (cartQty >= maxCartQty) {
+      console.log('Cart is full')
+    } else if (cartQty < noItemInCart) {
+      console.log('Not enough item in cart')
+    }
+    
+    
+    console.log(`Cart Quantity: ${cartQty}`);
     ">Show Quantity</button>
 
     <button onclick="cartQty++; console.log(`Cart Quantity: ${cartQty}`)" >Add to Cart</button>
@@ -31,6 +40,8 @@
     
     let cartQty = 0;
     let resetCart = cartQty * 0;
+    let maxCartQty = 10;
+    let noItemInCart = cartQty < 0;
 
 
         

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans</title>
+
+  </head>
+  <body>
+    <script>
+
+        let time = new Date();
+        let hours = time.getHours();
+        let name = 'Marco';
+
+        if (hours < 6 || hours < 12) {
+            console.log(`Good morning ${name}`);
+        } else if (hours < 13 || hours < 17) {
+            console.log(`Good afternoon ${name}`)
+        } else {
+            console.log(`Good evening ${name}`)
+        }
+
+
+        /* 6D */
+
+        const isHoliday = true;
+
+        let age = 6;
+
+        if ((age <= 6 && isHoliday)|| age > 65) {
+            console.log('Discount available')
+        } else {
+            console.log('Discount Unavailable')
+        }
+
+       
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
