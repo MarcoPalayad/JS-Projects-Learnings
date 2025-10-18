@@ -10,12 +10,32 @@
 </body>
 <script>
 
-    const product = {
-        name: 'socks',
-        price: 1090
-    }
+    // const product = {
+    //     name: 'socks',
+    //     price: 1090
+    // }
 
-    console.log(product)
+    // console.log(product)
+
+    const products2 = {
+        name: 'shirt',
+        ['delivery-time']: '1 day',
+        rating : {
+            stars: 4.5,
+            count: 87
+        },
+        fun: function function1 () {
+            console.log('A string inside a function nested inside of an object')
+        }
+    }
+    console.log(products2)
+    console.log(products2.name)
+    console.log(products2['name'])
+    console.log(products2.rating.count)
+    products2.fun()
+
+
+    console.log(JSON.stringify(products2))
 
 
 </script>
