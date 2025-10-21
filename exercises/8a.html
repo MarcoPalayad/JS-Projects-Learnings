@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    const item = {
+        name: 'basketball',
+        price: 2095
+    }
+
+    console.log(item.price)
+    console.log(item.price + 500)
+
+    item.time = '3 days'
+
+    console.log(item)
+
+    const item2 = {
+        name: 't-shirt',
+        price: 599
+    }
+
+    function comparePrice(item, item2) {
+        if (item.price < item2.price) {
+            return item
+        } else if (item2.price < item.price) {
+            return item2
+        }
+    }
+
+    
+    const lessExpensiveProduct = comparePrice(item, item2)
+    console.log(lessExpensiveProduct)
+
+    function isSameItem (item, item2) {
+        if (item.name === item2.name && item.price === item2.price) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    const isTheSameItem = isSameItem(item, item2)
+    console.log(isTheSameItem)
+
+
+
+    const morningText = 'Good Morning!'
+    console.log(morningText.toLowerCase())
+    console.log(morningText.repeat(2))
+
+
+
+</script>
+</html>
