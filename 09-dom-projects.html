@@ -9,10 +9,39 @@
 
     <p>YouTube subscribe button</p>
     <button onclick="subscribe()" class="js-subscribe-btn">Subscribe</button>
-    
+
+    <p></p>
+    <input placeholder="Cost of order" class="js-cost" onkeydown="handleCostKeyDown(event)">
+    <button onclick="calcTotal()">Calculate</button>
+    <p class="totalCost"></p>
     
 </body>
 <script>
+
+    String(25)
+    
+    window.document
+    window.console
+
+    function handleCostKeyDown (event) {
+        if (event.key === 'Enter') {
+            calcTotal()
+        }
+    }
+
+    function calcTotal () {
+        const inputElement = document.querySelector('.js-cost')
+        let  cost = Number(inputElement.value);
+
+        if (cost < 40) {
+            cost = cost + 40
+            
+        }
+
+        document.querySelector('.totalCost').innerHTML = `$${cost}`
+
+    }
+
 
     function subscribe() {
 
@@ -25,6 +54,8 @@
         }
     
     }
+
+
 
 
 </script>
