@@ -12,6 +12,12 @@
     
     ">check score</button>
 
+    <p class="js-playerMoves"></p>
+
+    <button>9a</button>
+    <button class="js-9b">9b</button>
+
+
 
 
     <script>
@@ -20,6 +26,9 @@
             wins: 0,
             losses: 0,
         }
+
+        document.querySelector('.js-9b').innerHTML = '9b done'
+
         
         function playGames(userGuess) {
 
@@ -50,6 +59,8 @@
                 score.losses += 1
                 console.log('You lose')
             }
+
+            document.querySelector('.js-playerMoves').innerHTML = `You pick: ${userGuess}`
 
         }
 

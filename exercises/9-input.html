@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+
+    <input class="user-input" placeholder="Name" onkeydown="userKeyDown(event)">
+    <button onclick="userInput()" class="js-submit">Submit</button>
+    <p class="user-event"></p>
+
+
+
+
+    <script>
+
+      function userKeyDown (event) {
+          if (event.key === 'Enter') {
+          userInput()
+        }
+      }
+       
+
+      function userInput () {
+          let a = document.querySelector('.user-input')
+          const b = a.value
+
+          document.querySelector('.user-event').innerHTML = `Your name is: ${b}`
+
+      }
+
+
+    </script>
+  </body>
+</html>
