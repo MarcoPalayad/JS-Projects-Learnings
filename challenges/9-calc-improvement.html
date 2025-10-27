@@ -28,18 +28,28 @@
     </p>
 
     <button onclick="calculation += '*'; saveCalculation(); console.log(calculation)"> * </button>
-    <button onclick="calculation = eval(calculation); console.log(calculation)"> = </button>
+    <button onclick="calculation = eval(calculation); saveCalculation();  console.log(calculation)"> = </button>
     <button onclick="calculation = ''; saveCalculation(); console.log(calculation)"> CLR </button>
+
+    <p>Previous Calc below:</p>
+    <p class="js-prevCalc"></p>
+    <p>New Calc below:</p>
+    <p class="js-calc"></p>
 
 
 <script>
     
         let calculation = localStorage.getItem('calculation') || '';
 
-        console.log(`Loaded calculation: ${calculation}`);
+        let a = calculation
+
+        document.querySelector('.js-prevCalc').innerHTML = a
 
         function saveCalculation() {
-        localStorage.setItem('calculation', calculation);
+          localStorage.setItem('calculation', calculation);
+          document.querySelector('.js-calc').innerHTML = calculation
+          document.querySelector('.js-prevCalc').innerHTML = a
+
         }
 
         
