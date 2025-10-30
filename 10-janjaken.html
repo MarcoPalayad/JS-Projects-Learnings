@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jan-Jaken</title>
+    <link rel="stylesheet"  href="styles/10-janjaken.css">
+</head>
+<body>
+
+    <p class="title"> ROCK PAPER SCISSOR </p>
+
+    <button onclick="playGame('Rock')" class="move-button"><img class="player-moves" src="Images/Rock.png"></button>
+
+    <button onclick="playGame('Paper');" class="move-button"><img class="player-moves" src="Images/Paper.png"></button>
+
+    <button onclick="playGame('Scissors');" class="move-button"><img class="player-moves" src="Images/Scissors.png" alt=""></button>
+
+    <p class="js-result result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score score"></p>
+
+    <button onclick="
+    
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+
+        localStorage.removeItem('score')
+
+        updateScoreElement()
+    
+    " class="reset-score">RESET SCORE</button>
+
+
+
+<script src="scripts/10-janjaken.js"></script>
+</body>
+</html>
