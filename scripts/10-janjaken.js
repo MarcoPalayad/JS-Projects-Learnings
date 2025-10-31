@@ -77,10 +77,6 @@
 
         updateScoreElement()
 
-
-    // alert(`You pick ${playerMove}. Computer picked ${compMove}. ${result}
-    // Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`); 
-
     }
 
     function updateScoreElement () {
