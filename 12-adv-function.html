@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Function</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    greeting()
+
+    function greeting() {
+        console.log('hello')
+    }
+
+    
+
+    const function1 = function greeting() {
+        console.log('hello there!')
+    }
+
+    console.log(function1)
+    console.log(typeof function1)
+
+    const object1 = {
+        num: 2,
+        fun: function greeting() {
+            console.log('you again')
+        }
+    }
+
+    object1.fun()
+
+
+    function display(param) {
+        console.log(param)
+    }
+
+    display(2)
+
+
+    function run(param) {
+        param()
+    }
+
+    run(function() {
+        console.log('why are you here?')
+    })
+
+    setTimeout(function() {
+        console.log('timeout')
+    }, 3000)
+
+    console.log('next line')
+
+
+    setInterval(function () {
+        console.log('interval')
+    }, 3000)
+
+</script>
+</html>

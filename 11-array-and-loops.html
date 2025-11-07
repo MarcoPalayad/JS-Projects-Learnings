@@ -69,24 +69,34 @@
 
     ////////////////////////////////////////
 
-    const num = [1, 1, 3]
-    const total = 0
+    const nums = [1, 1, 3]
+    let total = 0
 
-    for (let i = 0; i < num.length; i++) {
-        const nums = num[i]
-        total += nums
+    for (let i = 0; i < nums.length; i++) {
+        const num = nums[i]
+        total += num
     }
 
     console.log(total)
 
     const numsDoubled = []
 
-    for (let i = 0; i < num.length; i++) {
-        const num = num[i]
+    for (let i = 0; i < nums.length; i++) {
+        const num = nums[i]
         numsDoubled.push(num * 2);
     }
 
     console.log(numsDoubled)
+
+
+    //////////////////////////////////////////
+
+
+    const array1 = [1, 2, 3]
+    const array2 = array1
+    array1.push(4)
+
+    console.log(array1)
 
 </script>
 </html>
