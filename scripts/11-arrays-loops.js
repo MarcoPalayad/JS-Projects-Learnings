@@ -81,6 +81,35 @@ function removeFirstTwo (array2) {
 removeFirstTwo(['egg', 'potato', 'egg', 'egg', 'mushroom'])
 
 
+///////////// 11t /////////////////////////////////
+
+function removeLastTwo (array3) {
+
+    const withoutLastTwo = []
+    let count = 0
+
+    for (let i = 0; i < array3.length; i++) {
+        if (array3[i] === 'egg' && count < 2) {   
+            count ++
+            continue
+        } else {
+            withoutLastTwo.push(array3[i])
+        }
+
+        
+    }
+
+    console.log(withoutLastTwo)
+
+}
+
+removeLastTwo(['egg', 'potato', 'egg', 'egg', 'mushroom'].reverse())
+
+
+
+
+
+
 //////////////////////////////////////////////////
 // Exercism.org - Problem (Lasagna) Task 3 //
 
