@@ -34,9 +34,8 @@ function findIndex (array, word) {
 
 findIndex(['food', 'protein', 'whey', 'gym-rat', 'whey' ], 'whey')
 
+
 ////////////////////////////////////////////
-
-
 
 
 function removeEgg (array1) {
@@ -81,7 +80,7 @@ function removeFirstTwo (array2) {
 removeFirstTwo(['egg', 'potato', 'egg', 'egg', 'mushroom'])
 
 
-///////////// 11t /////////////////////////////////
+// 11t Exercise //
 
 function removeLastTwo (array3) {
 
@@ -100,17 +99,51 @@ function removeLastTwo (array3) {
     }
 
     console.log(withoutLastTwo)
-
 }
 
 removeLastTwo(['egg', 'potato', 'egg', 'egg', 'mushroom'].reverse())
 
 
 
+// 11U Exercise //
+
+const foods = ['egg', 'potato', 'mushroom', 'egg', 'egg', 'mushroom']
+
+function removeLastTwoWithSplice (foods, itemToRemove) {
+
+    const arrayCopy = foods.slice().reverse()
+
+    const withoutLastTwoWithSplice = []
+    let count = 0
+
+    for (let i = 0; i < arrayCopy.length; i++) {
+        if (arrayCopy[i] === itemToRemove && count < 2) {   
+            count ++
+            continue
+        } else {
+            withoutLastTwoWithSplice.push(arrayCopy[i])
+        }
+
+        
+    }
+
+    // console.log(withoutLastTwoWithSplice)
+    // console.log(foods)
+
+    return withoutLastTwoWithSplice.reverse()
+
+
+    
+
+}
+
+removeLastTwoWithSplice(foods, 'mushroom')
+console.log('Remove mushrooms:', removeLastTwoWithSplice(foods, 'mushroom'))
+console.log('Remove eggs:', removeLastTwoWithSplice(foods, 'egg'))
+console.log('Original array unchanged:', foods)
 
 
 
-//////////////////////////////////////////////////
 // Exercism.org - Problem (Lasagna) Task 3 //
 
 function amountOfNoodlesAndSauce (quantities) {
