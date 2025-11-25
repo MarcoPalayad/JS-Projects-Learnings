@@ -6,20 +6,25 @@
     <title>Advance Function</title>
 </head>
 <body>
+
+    <button class="start" >Start</button>
+
     
 </body>
 <script>
 
+    
+
     greeting()
 
     function greeting() {
-        console.log('hello')
+        console.log('hello');
     }
 
     
 
     const function1 = function greeting() {
-        console.log('hello there!')
+        console.log('hello there!');
     }
 
     console.log(function1)
@@ -28,18 +33,18 @@
     const object1 = {
         num: 2,
         fun: function greeting() {
-            console.log('you again')
+            console.log('you again');
         }
     }
 
-    object1.fun()
+    object1.fun();
 
 
     function display(param) {
-        console.log(param)
+        console.log(param);
     }
 
-    display(2)
+    display(2);
 
 
     function run(param) {
@@ -48,18 +53,81 @@
 
     run(function() {
         console.log('why are you here?')
-    })
+    });
 
     setTimeout(function() {
         console.log('timeout')
-    }, 3000)
+    }, 3000);
 
-    console.log('next line')
+    console.log('next line');
 
+    /*
 
     setInterval(function () {
         console.log('interval')
-    }, 3000)
+    }, 3000);
+
+    */
+
+
+    [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+    ].forEach(function (value, index) {
+
+        if (value === 'wash dishes') {
+            return
+        }
+
+        console.log(index);
+        console.log(value);
+    });
+
+
+///// - 12A Exercise
+    
+    const add = function () {
+        console.log(2 + 3);
+    }
+    
+    add();
+    add();
+
+
+///// - 12B Exercise
+
+    function runTwice (fun) {
+        fun();
+        fun();
+    }
+    
+    runTwice (function () {
+        console.log('12B')
+    });
+
+    runTwice(add)
+
+
+
+///// - 12C Exercise
+
+    const buttonClicked = document.querySelector('.start')
+
+    buttonClicked. addEventListener('click', whenClicked)
+
+
+    function whenClicked () {
+        // console.log(event.target)
+       setTimeout(function () {
+        event.target.innerHTML = 'Finished!'
+       }, 1000)
+    }
+
+    
+
+
+
 
 </script>
 </html>
