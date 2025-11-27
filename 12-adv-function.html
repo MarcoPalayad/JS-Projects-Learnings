@@ -1,133 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advance Function</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Advance Function</title>
+	</head>
+	<body>
+		<p><button class="start">Start</button></p>
+		<p><button class="cart">Add to Cart</button></p>
+		<p class="add-to-cart"></p>
+		<button class="add" onclick="onAdd()">Add</button>
+		<button class="remove" onclick="onDecrease()">Remove</button>
+	</body>
+	<script>
+		greeting();
 
-    <button class="start" >Start</button>
+		function greeting() {
+			console.log("hello");
+		}
 
-    
-</body>
-<script>
+		const function1 = function greeting() {
+			console.log("hello there!");
+		};
 
-    
+		console.log(function1);
+		console.log(typeof function1);
 
-    greeting()
+		const object1 = {
+			num: 2,
+			fun: function greeting() {
+				console.log("you again");
+			},
+		};
 
-    function greeting() {
-        console.log('hello');
-    }
+		object1.fun();
 
-    
+		function display(param) {
+			console.log(param);
+		}
 
-    const function1 = function greeting() {
-        console.log('hello there!');
-    }
+		display(2);
 
-    console.log(function1)
-    console.log(typeof function1)
+		function run(param) {
+			param();
+		}
 
-    const object1 = {
-        num: 2,
-        fun: function greeting() {
-            console.log('you again');
-        }
-    }
+		run(function () {
+			console.log("why are you here?");
+		});
 
-    object1.fun();
+		setTimeout(function () {
+			console.log("timeout");
+		}, 3000);
 
+		console.log("next line");
 
-    function display(param) {
-        console.log(param);
-    }
+		// setInterval(function () {
+		//     console.log('interval')
+		// }, 3000);
 
-    display(2);
+		["make dinner", "wash dishes", "watch youtube"].forEach(function (value, index) {
+			if (value === "wash dishes") {
+				return;
+			}
 
+			console.log(index);
+			console.log(value);
+		});
 
-    function run(param) {
-        param()
-    }
+		///// - 12B Exercise
 
-    run(function() {
-        console.log('why are you here?')
-    });
+		const add = function () {
+			console.log(2 + 3);
+		};
 
-    setTimeout(function() {
-        console.log('timeout')
-    }, 3000);
+		add();
+		add();
 
-    console.log('next line');
+		///// - 12C Exercise
 
-    /*
+		function runTwice(fun) {
+			fun();
+			fun();
+		}
 
-    setInterval(function () {
-        console.log('interval')
-    }, 3000);
+		runTwice(function () {
+			console.log("12B");
+		});
 
-    */
+		runTwice(add);
 
+		///// - 12D Exercise
 
-    [
-        'make dinner',
-        'wash dishes',
-        'watch youtube'
-    ].forEach(function (value, index) {
+		const buttonClicked = document.querySelector(".start");
 
-        if (value === 'wash dishes') {
-            return
-        }
+		buttonClicked.addEventListener("click", whenClicked);
 
-        console.log(index);
-        console.log(value);
-    });
+		function whenClicked() {
+			const onClicked = event.target;
+			console.log(event.target);
+			setTimeout(function () {
+				onClicked.innerHTML = "Finished!";
+			}, 1000);
+		}
 
+		///// - 12E & 12F Exercise
 
-///// - 12A Exercise
-    
-    const add = function () {
-        console.log(2 + 3);
-    }
-    
-    add();
-    add();
+		const addToCart = document.querySelector(".cart");
 
+		let clearTime = clearTimeout();
 
-///// - 12B Exercise
+		addToCart.addEventListener("click", onAddToCart);
 
-    function runTwice (fun) {
-        fun();
-        fun();
-    }
-    
-    runTwice (function () {
-        console.log('12B')
-    });
+		function onAddToCart() {
+			document.querySelector(".add-to-cart").innerHTML = "Added!";
+			if (clearTime) {
+				clearTimeout(clearTime);
+			}
+			clearTime = setTimeout(function () {
+				document.querySelector(".add-to-cart").innerHTML = "";
+			}, 2000);
+		}
 
-    runTwice(add)
+		///// - 12G  & 12H Exercise
 
+		let msgCount = 0;
 
+		function onAdd() {
+			msgCount++;
+			updateCounter();
+		}
 
-///// - 12C Exercise
+		function onDecrease() {
+			if (msgCount <= 0) {
+				return;
+			}
+			msgCount--;
+			updateCounter();
+		}
 
-    const buttonClicked = document.querySelector('.start')
+		setInterval(function () {
+			updateCounter();
+		}, 1000);
 
-    buttonClicked. addEventListener('click', whenClicked)
-
-
-    function whenClicked () {
-        // console.log(event.target)
-       setTimeout(function () {
-        event.target.innerHTML = 'Finished!'
-       }, 1000)
-    }
-
-    
-
-
-
-
-</script>
+		function updateCounter() {
+			if (msgCount === 0 || msgCount < 0) {
+				document.title = "App";
+			} else {
+				document.title = `(${msgCount}) Message!`;
+			}
+		}
+	</script>
 </html>
