@@ -11,144 +11,193 @@
 		<p class="add-to-cart"></p>
 		<button class="add" onclick="onAdd()">Add</button>
 		<button class="remove" onclick="onDecrease()">Remove</button>
+		
+		<button oncClick ="" class="js-button">Click</button>
+		
 	</body>
 	<script>
-		greeting();
+		
+	const  buttonElement = document.querySelector('.js-button');
+	
+	const buttonEvent = () => {
+		console.log('click');
+	};
+	
+	buttonElement.addEventListener('click',  buttonEvent());
+	
+	buttonElement.addEventListener('click',  buttonEvent());
+	
+	greeting();
 
-		function greeting() {
-			console.log("hello");
+	function greeting() {
+		console.log("hello");
+	}
+
+	const function1 = function greeting() {
+		console.log("hello there!");
+	};
+
+	console.log(function1);
+	console.log(typeof function1);
+
+	const object1 = {
+		num: 2,
+		fun: function greeting() {
+			console.log("you again");
+		},
+	};
+
+	object1.fun();
+
+	function display(param) {
+		console.log(param);
+	}
+
+	display(2);
+
+	function run(param) {
+		param();
+	}
+
+	run(function () {
+		console.log("why are you here?");
+	});
+
+	setTimeout(function () {
+		console.log("timeout");
+	}, 3000);
+
+	console.log("next line");
+
+	// setInterval(function () {
+	//     console.log('interval')
+	// }, 3000);
+
+	["make dinner", 
+	 "wash dishes", 
+	"watch youtube"].forEach( (value, index) => {
+		if (value === "wash dishes") {
+			return;
 		}
 
-		const function1 = function greeting() {
-			console.log("hello there!");
-		};
+		console.log(index);
+		console.log(value);
+	});
 
-		console.log(function1);
-		console.log(typeof function1);
+	///// - 12B Exercise
 
-		const object1 = {
-			num: 2,
-			fun: function greeting() {
-				console.log("you again");
-			},
-		};
+	const add = function () {
+		console.log(2 + 3);
+	};
 
-		object1.fun();
+	add();
+	add();
 
-		function display(param) {
-			console.log(param);
-		}
+	///// - 12C Exercise
 
-		display(2);
+	function runTwice(fun) {
+		fun();
+		fun();
+	}
 
-		function run(param) {
-			param();
-		}
+	runTwice(function () {
+		console.log("12B");
+	});
 
-		run(function () {
-			console.log("why are you here?");
-		});
+	runTwice(add);
 
+	///// - 12D Exercise
+
+	const buttonClicked = document.querySelector(".start");
+
+	buttonClicked.addEventListener("click", whenClicked);
+
+	function whenClicked() {
+		const onClicked = event.target;
+		console.log(event.target);
 		setTimeout(function () {
-			console.log("timeout");
-		}, 3000);
-
-		console.log("next line");
-
-		// setInterval(function () {
-		//     console.log('interval')
-		// }, 3000);
-
-		["make dinner", "wash dishes", "watch youtube"].forEach(function (value, index) {
-			if (value === "wash dishes") {
-				return;
-			}
-
-			console.log(index);
-			console.log(value);
-		});
-
-		///// - 12B Exercise
-
-		const add = function () {
-			console.log(2 + 3);
-		};
-
-		add();
-		add();
-
-		///// - 12C Exercise
-
-		function runTwice(fun) {
-			fun();
-			fun();
-		}
-
-		runTwice(function () {
-			console.log("12B");
-		});
-
-		runTwice(add);
-
-		///// - 12D Exercise
-
-		const buttonClicked = document.querySelector(".start");
-
-		buttonClicked.addEventListener("click", whenClicked);
-
-		function whenClicked() {
-			const onClicked = event.target;
-			console.log(event.target);
-			setTimeout(function () {
-				onClicked.innerHTML = "Finished!";
-			}, 1000);
-		}
-
-		///// - 12E & 12F Exercise
-
-		const addToCart = document.querySelector(".cart");
-
-		let clearTime = clearTimeout();
-
-		addToCart.addEventListener("click", onAddToCart);
-
-		function onAddToCart() {
-			document.querySelector(".add-to-cart").innerHTML = "Added!";
-			if (clearTime) {
-				clearTimeout(clearTime);
-			}
-			clearTime = setTimeout(function () {
-				document.querySelector(".add-to-cart").innerHTML = "";
-			}, 2000);
-		}
-
-		///// - 12G  & 12H Exercise
-
-		let msgCount = 0;
-
-		function onAdd() {
-			msgCount++;
-			updateCounter();
-		}
-
-		function onDecrease() {
-			if (msgCount <= 0) {
-				return;
-			}
-			msgCount--;
-			updateCounter();
-		}
-
-		setInterval(function () {
-			updateCounter();
+			onClicked.innerHTML = "Finished!";
 		}, 1000);
+	}
 
-		function updateCounter() {
-			if (msgCount === 0 || msgCount < 0) {
-				document.title = "App";
-			} else {
-				document.title = `(${msgCount}) Message!`;
-			}
+	///// - 12E & 12F Exercise
+
+	const addToCart = document.querySelector(".cart");
+
+	let clearTime = clearTimeout();
+
+	addToCart.addEventListener("click", onAddToCart);
+
+	function onAddToCart() {
+		document.querySelector(".add-to-cart").innerHTML = "Added!";
+		if (clearTime) {
+			clearTimeout(clearTime);
 		}
+		clearTime = setTimeout(function () {
+			document.querySelector(".add-to-cart").innerHTML = "";
+		}, 2000);
+	}
+
+	///// - 12G  & 12H Exercise
+
+	let msgCount = 0;
+
+	function onAdd() {
+		msgCount++;
+		updateCounter();
+	}
+
+	function onDecrease() {
+		if (msgCount <= 0) {
+			return;
+		}
+		msgCount--;
+		updateCounter();
+	}
+
+	setInterval(function () {
+		updateCounter();
+	}, 1000);
+
+	function updateCounter() {
+		if (msgCount === 0 || msgCount < 0) {
+			document.title = "App";
+		} else {
+			document.title = `(${msgCount}) Message!`;
+		}
+	}
+	
+	
+	const regularFunction = function (param, param2) {
+		console.log('hello');
+		return 5;
+	}
+	
+	
+	const arrowFuntion = (param, param2) => {
+		console.log('hello');
+		return 5;
+	};
+	
+	arrowFuntion();
+	
+	const oneParam = param => {
+		console.log(param + 1);
+	};
+	
+	
+	const oneline = () =>  2 + 3; 
+	console.log(oneline());
+	
+	const object2 = {
+		method: () => {
+			
+		},
+		method() {
+			
+		}
+	}
+		
+		
 	</script>
 </html>
