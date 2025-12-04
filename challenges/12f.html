@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Advance Function</title>
+	</head>
+	<body>
+		<p>
+			<button class="start">Start</button>
+		</p>
+		<p>
+			<button class="loading">Start</button>
+		</p>
+		<p>
+			<button class="add-to-cart">Add to Cart</button>
+		</p>
+		<p class="added"</p>
+		
+	</body>
+	<script>
+		greeting();
+
+		function greeting() {
+			console.log("hello");
+		}
+
+		const function1 = function greeting() {
+			console.log("hello there!");
+		};
+
+		console.log(function1);
+		console.log(typeof function1);
+
+		const object1 = {
+			num: 2,
+			fun: function greeting() {
+				console.log("you again");
+			},
+		};
+
+		object1.fun();
+
+		function display(param) {
+			console.log(param);
+		}
+
+		display(2);
+
+		function run(param) {
+			param();
+		}
+
+		run(function () {
+			console.log("why are you here?");
+		});
+
+		setTimeout(function () {
+			console.log("timeout");
+		}, 3000);
+
+		console.log("next line");
+
+		/*
+
+    setInterval(function () {
+        console.log('interval')
+    }, 3000);
+
+    */
+
+		["make dinner", "wash dishes", "watch youtube"].forEach(function (value, index) {
+			if (value === "wash dishes") {
+				return;
+			}
+
+			console.log(index);
+			console.log(value);
+		});
+
+		///// - 12A Exercise
+
+		const add = function () {
+			console.log(2 + 3);
+		};
+
+		add();
+		add();
+
+		///// - 12B Exercise
+
+		function runTwice(fun) {
+			fun();
+			fun();
+		}
+
+		runTwice(function () {
+			console.log("12B");
+		});
+
+		runTwice(add);
+
+		
+		///// - 12C Exercise
+
+		const buttonClicked = document.querySelector(".start");
+
+		buttonClicked.addEventListener("click", whenClicked);
+
+		function whenClicked() {
+			const onClicked = event.target;
+			console.log(event.target)
+			setTimeout(function () {
+				onClicked.innerHTML = "Finished!"
+			}, 1000);
+		}
+
+		
+		///// - 12D Exercise
+
+		const buttonLoad = document.querySelector(".loading");
+
+		buttonLoad.addEventListener("click", whenClicked);
+
+		function whenClicked() {
+			const onLoad = event.target
+			setTimeout(function () {
+				onLoad.innerHTML = "Loading..!"
+			}, 1000);
+		}
+		
+		
+		///// - 12E Exercise
+		
+		const addToCart = document.querySelector(".add-to-cart")
+		
+		addToCart.addEventListener("click", addCart)
+		
+		function addCart() {
+			document.querySelector(".added").innerHTML = "Cart added!";
+		}
+		
+
+		///// - 12F Exercise
+		
+		
+		
+		
+		
+	</script>
+</html>

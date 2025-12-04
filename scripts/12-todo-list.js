@@ -8,9 +8,9 @@ function renderTodoList() {
 	todoList.forEach((todoObject, index) => {
 		const { name, dueDate } = todoObject;
 		const html = `
-          <div>${name}</div>
-          <div>${dueDate}</div>
-          <button class="todo-delete js-delete-todo-btn">Delete</button>
+      <div>${name}</div>
+      <div>${dueDate}</div>
+      <button class="todo-delete js-delete-todo-btn">Delete</button>
       `;
 		todoListHTML += html;
 	});
